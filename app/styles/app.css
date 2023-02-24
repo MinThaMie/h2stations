@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+}
+
+#app {
+  height: 100vh;
+
+  /* grid container settings */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+
+#app > header {
+  grid-area: header;
+  padding: 20px;
+  background-color: #044389;
+  color: white;
+}
+
+#app > main {
+  grid-area: main;
+  padding: 20px;
+}
+
+#app > footer {
+  grid-area: footer;
+  padding: 20px;
+  background-color: #044389;
+  color: white;
+}
+
+.underline {
+  color: white;
+}
+
+.station-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  max-height: 100%;
+  overflow-y: scroll;
+}
+.station-card {
+  list-style: none;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid #A9BCD0;
+}
+
+.list-header {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.valve {
+  height: 80px;
+}
+
+.valve.unavailable {
+  filter: invert(56%) sepia(0%) saturate(1750%) hue-rotate(318deg) brightness(90%) contrast(101%);
+}
+
+.valve.available {
+  filter: invert(53%) sepia(29%) saturate(543%) hue-rotate(62deg) brightness(98%) contrast(88%);
+}
+
+

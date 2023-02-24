@@ -1,7 +1,16 @@
 {{page-title "H2stations"}}
-
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div id="app">
+<header>
+  H2 Stations
+</header>
+<main>
+  <ul class="station-list">
+  {{#each @model as |st | }}
+  <Listitem @name={{st.name}} @address={{st.address}} @price={{st.price}} @payments={{st.payments}} @coor={{st.coor}} @has350large={{st.has_350_large}} @has350small={{st.has_350_small}} @has700small={{st.has_700_small}}/>
+  {{/each}}
+</ul>
+</main>
+<footer>
+  <span>An open-source project made with ❤️ by <a href="https://twitter.com/agvanherwijnen" class="underline" rel="external">Anne-Greeth</a>. Hosted by <a href="https://www.netlify.com" class="underline" rel="external">Netlify</a>.</span>
+  <span>Wanna run this project yourself, check out the code on the <a href="https://github.com/minthamie/h2stations" class="underline" rel="external">GitHub repository</a>.</span></footer>
+</div>
