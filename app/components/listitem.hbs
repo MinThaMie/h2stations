@@ -1,8 +1,8 @@
 <li ...attributes class="station-card">
   <h1 class="list-header">{{@name}}</h1>
-  <p><a target="_blank noopener noreferrer" href="{{coordinate-url @coor}}">{{@address}}</a></p>
-  <p>{{@price}} €/kg. You can pay with {{@payments}}</p>
-  <p>
+  <p class="list-address"><a target="_blank noopener noreferrer" href="{{coordinate-url @coor}}">{{@address}}</a></p>
+  <p class="list-info">{{@price}} €/kg. You can pay with {{@payments}}</p>
+  <p class={{if @error "error list-icons" "list-icons"}}>
     <img class={{if @has350large "valve available" "valve unavailable"}} src="images/350_large.svg" alt="truck"/>
     <img class={{if @has350small "valve available" "valve unavailable"}} src="images/350_small.svg" alt="car with 350 inside" />
     <img class={{if @has700small "valve available" "valve unavailable"}} src="images/700_small.svg" alt="car with 700 inside" />

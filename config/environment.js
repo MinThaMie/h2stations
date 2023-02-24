@@ -25,6 +25,7 @@ module.exports = function (environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.API_URL = 'http://localhost:9999/.netlify/functions/stations';
   }
 
   if (environment === 'test') {
@@ -40,7 +41,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV.APP.API_URL = 'https://h2tanken.netlify.app/stations';
   }
 
   return ENV;

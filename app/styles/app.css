@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
@@ -53,15 +57,36 @@ body {
   padding: 8px;
   border-radius: 8px;
   border: 2px solid #A9BCD0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 50px 1fr 60px;
+  grid-column-gap: 0px;
+  grid-row-gap: 16px;
 }
 
 .list-header {
-  font-size: 16px;
-  margin-top: 0;
+  font-size: 20px;
+  margin: 0;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.list-address {
+  margin: 0;
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.list-info {
+  margin: 0;
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.list-icons {
+  margin: 0;
+  grid-area: 4 / 1 / 5 / 2;
 }
 
 .valve {
-  height: 80px;
+  height: 60px;
 }
 
 .valve.unavailable {
@@ -69,7 +94,10 @@ body {
 }
 
 .valve.available {
-  filter: invert(53%) sepia(29%) saturate(543%) hue-rotate(62deg) brightness(98%) contrast(88%);
+  /* #008000 */
+  filter: invert(23%) sepia(71%) saturate(4770%) hue-rotate(108deg) brightness(93%) contrast(104%);
 }
 
-
+.error > .valve {
+  filter: invert(20%) sepia(91%) saturate(6973%) hue-rotate(358deg) brightness(118%) contrast(122%);
+}

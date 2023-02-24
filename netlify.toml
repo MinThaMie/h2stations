@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/stations"
+to = "/.netlify/functions/stations"
+status = 200
