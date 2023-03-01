@@ -8,7 +8,6 @@ export default class ApplicationRoute extends Route {
     const stations = await response.json();
     return stations.map((station) => {
       const price = station.price_message?.match(/\d+.\d+/g)[0] || '-';
-      const errorState = station.combinedstatus !== "OPEN";
       const address =
         station.street + ' ' + station.streetnr + ', ' + station.city;
       const coor = station.latitude + ',' + station.longitude;
@@ -17,11 +16,17 @@ export default class ApplicationRoute extends Route {
       const has_350_small = 't' === station.has_350_small;
       const payments =
         station.paymenttypes.map((type) => type.descr).join(', ') || '-';
+      const errorState700 = station.status700 == 'EXCEPTION';
+      const errorState350s = station.status350s == 'EXCEPTION';
+      const errorState350l = station.status350l == 'EXCEPTION';
       return {
         name: station.name,
         price: price,
         address: address,
-        errorState: errorState,
+        news: station.news,
+        errorState700: errorState700,
+        errorState350s: errorState350s,
+        errorState350l: errorState350l,
         coor: coor,
         has_700_small: has_700_small,
         has_350_large: has_350_large,

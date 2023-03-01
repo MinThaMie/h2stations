@@ -1,10 +1,12 @@
 <li ...attributes class="station-card">
-  <h1 class="list-header">{{@name}}</h1>
-  <p class="list-address"><a target="_blank noopener noreferrer" href="{{coordinate-url @coor}}">{{@address}}</a></p>
-  <p class="list-info">{{@price}} €/kg. You can pay with {{@payments}}</p>
-  <p class={{if @error "error list-icons" "list-icons"}}>
-    <img class={{if @has350large "valve available" "valve unavailable"}} src="images/350_large.svg" alt="truck"/>
-    <img class={{if @has350small "valve available" "valve unavailable"}} src="images/350_small.svg" alt="car with 350 inside" />
-    <img class={{if @has700small "valve available" "valve unavailable"}} src="images/700_small.svg" alt="car with 700 inside" />
+  <h1 class="list-header">{{@station.name}}</h1>
+  <p class="list-address"><a target="_blank noopener noreferrer" href="{{coordinate-url @coor}}">{{@station.address}}</a></p>
+  <p class="list-info">{{@station.price}} €/kg. You can pay with {{@station.payments}}
+  {{#if @station.news}}<p class="list-news">{{@station.news}}</p>{{/if}}
+  </p>
+  <p class="list-icons">
+    <img class={{this.iconClass350l}} src="images/350_large.svg" alt="truck"/>
+    <img class={{this.iconClass350s}} src="images/350_small.svg" alt="car with 350 inside" />
+    <img class={{this.iconClass700}} src="images/700_small.svg" alt="car with 700 inside" />
   </p>
 </li>

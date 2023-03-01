@@ -6,7 +6,7 @@
 <main>
   <ul class="station-list">
   {{#each @model as |st | }}
-  <Listitem @name={{st.name}} @address={{st.address}} @price={{st.price}} @payments={{st.payments}} @coor={{st.coor}} @has350large={{st.has_350_large}} @has350small={{st.has_350_small}} @has700small={{st.has_700_small}} @error={{st.errorState}}/>
+  <Listitem @station={{st}}/>
   {{/each}}
 </ul>
 </main>
