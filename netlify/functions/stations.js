@@ -30,13 +30,11 @@ exports.handler = async (event, context) => {
     let status700 = await status700Response.json();
     let status350Small = await status350SmallResponse.json();
     let status350Large = await status350LargeResponse.json();
-
     let combinedData = [];
     stationData.fuelstation.forEach((station) => {
       if (station.countryshortname === 'NL') {
         let completeStation = { ...station };
         let shouldbeShown = false;
-        console.log(station.name);
         if (station.has_350_large == 't') {
           const s350l = status350Large.fuelstation.find(
             (s) => s.name == station.name
@@ -45,7 +43,6 @@ exports.handler = async (event, context) => {
             completeStation['status350l'] = s350l.combinedstatus;
             completeStation['status350lmessage'] = s350l.combinedremark;
             completeStation['price_message'] = s350l.price_message;
-            console.log(s350l.price_message)
             shouldbeShown = true;
           }
         }
@@ -57,7 +54,6 @@ exports.handler = async (event, context) => {
             completeStation['status700'] = s700.combinedstatus;
             completeStation['status700message'] = s700.combinedremark;
             completeStation['price_message'] = s700.price_message;
-            console.log(s700.price_message);
             shouldbeShown = true;
           }
         }
@@ -69,7 +65,6 @@ exports.handler = async (event, context) => {
             completeStation['status350s'] = s350s.combinedstatus;
             completeStation['status350smessage'] = s350s.combinedremark;
             completeStation['price_message'] = s350s.price_message;
-            console.log(s350s.price_message);
             shouldbeShown = true;
           }
         }
@@ -78,6 +73,7 @@ exports.handler = async (event, context) => {
         }
       }
     });
+    combinedData.sort((a, b) => (a.city > b.city ? 1 : -1));
     return {
       statusCode: 200,
       body: JSON.stringify(combinedData),
