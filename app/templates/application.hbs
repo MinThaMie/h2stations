@@ -3,12 +3,13 @@
 <header>
   H2 Tanken
 </header>
+<nav class="main-menu">
+  <LinkTo @route="nl">Netherlands</LinkTo>
+  <LinkTo @route="europe">Europe</LinkTo>
+  <LinkTo @route="close">Close to Me</LinkTo>
+</nav>
 <main>
-  <ul class="station-list">
-  {{#each @model as |st | }}
-  <Listitem @station={{st}}/>
-  {{/each}}
-</ul>
+{{outlet}}
 </main>
 <footer>
   <span>An open-source project made with ❤️ by <a href="https://twitter.com/agvanherwijnen" class="underline" rel="external">Anne-Greeth</a>. Hosted by <a href="https://www.netlify.com" class="underline" rel="external">Netlify</a>.</span>

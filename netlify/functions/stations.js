@@ -32,45 +32,41 @@ exports.handler = async (event, context) => {
     let status350Large = await status350LargeResponse.json();
     let combinedData = [];
     stationData.fuelstation.forEach((station) => {
-      if (station.countryshortname === 'NL') {
-        let completeStation = { ...station };
-        let shouldbeShown = false;
-        if (station.has_350_large == 't') {
-          const s350l = status350Large.fuelstation.find(
-            (s) => s.name == station.name
-          );
-          if (s350l && s350l.combinedstatus !== 'PLANNED') {
-            completeStation['status350l'] = s350l.combinedstatus;
-            completeStation['status350lmessage'] = s350l.combinedremark;
-            completeStation['price_message'] = s350l.price_message;
-            shouldbeShown = true;
-          }
+      let completeStation = { ...station };
+      let shouldbeShown = false;
+      if (station.has_350_large == 't') {
+        const s350l = status350Large.fuelstation.find(
+          (s) => s.name == station.name
+        );
+        if (s350l && s350l.combinedstatus !== 'PLANNED') {
+          completeStation['status350l'] = s350l.combinedstatus;
+          completeStation['status350lmessage'] = s350l.combinedremark;
+          completeStation['price_message'] = s350l.price_message;
+          shouldbeShown = true;
         }
-        if (station.has_700_small == 't') {
-          const s700 = status700.fuelstation.find(
-            (s) => s.name == station.name
-          );
-          if (s700 && s700.combinedstatus !== 'PLANNED') {
-            completeStation['status700'] = s700.combinedstatus;
-            completeStation['status700message'] = s700.combinedremark;
-            completeStation['price_message'] = s700.price_message;
-            shouldbeShown = true;
-          }
+      }
+      if (station.has_700_small == 't') {
+        const s700 = status700.fuelstation.find((s) => s.name == station.name);
+        if (s700 && s700.combinedstatus !== 'PLANNED') {
+          completeStation['status700'] = s700.combinedstatus;
+          completeStation['status700message'] = s700.combinedremark;
+          completeStation['price_message'] = s700.price_message;
+          shouldbeShown = true;
         }
-        if (station.has_350_small == 't') {
-          const s350s = status350Small.fuelstation.find(
-            (s) => s.name == station.name
-          );
-          if (s350s && s350s.combinedstatus !== 'PLANNED') {
-            completeStation['status350s'] = s350s.combinedstatus;
-            completeStation['status350smessage'] = s350s.combinedremark;
-            completeStation['price_message'] = s350s.price_message;
-            shouldbeShown = true;
-          }
+      }
+      if (station.has_350_small == 't') {
+        const s350s = status350Small.fuelstation.find(
+          (s) => s.name == station.name
+        );
+        if (s350s && s350s.combinedstatus !== 'PLANNED') {
+          completeStation['status350s'] = s350s.combinedstatus;
+          completeStation['status350smessage'] = s350s.combinedremark;
+          completeStation['price_message'] = s350s.price_message;
+          shouldbeShown = true;
         }
-        if (shouldbeShown == true) {
-          combinedData.push(completeStation);
-        }
+      }
+      if (shouldbeShown == true) {
+        combinedData.push(completeStation);
       }
     });
     combinedData.sort((a, b) => (a.city > b.city ? 1 : -1));
