@@ -4,16 +4,16 @@
       <h1>{{@station.name}}</h1>
       <a class="list-address" target="_blank noopener noreferrer" href="{{coordinate-url @station.coor}}">{{@station.address}}</a>
     </div>
-    <p class="list-info"><span class="price">{{@station.price}}</span> <span class="price-type">€/kg</span> — You can pay with {{@station.payments}}
+    <p class="list-info"><span class="price">{{@station.price}}</span> <span class="price-type">€/kg</span><br>{{@station.payments}}
     {{#if @station.news}}<p class="list-news">{{@station.news}}</p>{{/if}}
     {{#if @station.statusMessage}}<p class="exception-message">{{@station.statusMessage}}</p>{{/if}}
     </p>
   </div>
   <div class="list-icons">
     {{#if this.isOpen}}
-      {{#if this.available350l}}<img class="valve" src="images/truck.svg" alt="truck"/>{{/if}}
-      {{#if this.available350s}}<img class="valve" src="images/car_350.svg" alt="car with 350 inside" />{{/if}}
-      {{#if this.available700}}<img class="valve" src="images/car_700.svg" alt="car with 700 inside" />{{/if}}
+      {{#if this.available350l}}<div class="icon-container"><img class="valve" src="images/truck_3.svg" alt="truck"/></div>{{/if}}
+      {{#if this.available350s}}<div class="icon-container"><img class="valve icon-image" src="images/car_3.svg" alt="car with 350 inside" /><span class="icon-badge">350</span></div>{{/if}}
+      {{#if this.available700}}<div class="icon-container"><img class="valve icon-image" src="images/car_3.svg" alt="car with 700 inside" /><span class="icon-badge">700</span></div>{{/if}}
     {{/if}}
     {{#if this.isClosed}}<p class="closed">CLOSED</p>{{/if}}
   </div>

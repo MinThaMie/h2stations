@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="666.66663"
+   height="566.66669"
+   viewBox="0 0 19.999999 17.000001"
+   version="1.1"
+   id="svg517"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs521" />
+  <title
+     id="title510">truck</title>
+  <desc
+     id="desc512">Created with sketchtool.</desc>
+  <g
+     id="vehicles"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     transform="translate(-1.9999999,-3.9999998)">
+    <g
+       id="truck"
+       fill="#000000">
+      <path
+         d="M 10,18 C 10,19.656854 8.6568543,21 7,21 5.3431457,21 4,19.656854 4,18 2.8954305,18 2,17.104569 2,16 V 6 C 2,4.8954305 2.8954305,4 4,4 H 15.001252 C 16.10513,4 17,4.8948698 17,5.9987476 l 3,0.00125 C 22,6.0002767 21.999499,8.8956261 21.999499,10 L 22,16 c 0,1.104569 -0.895431,2 -2,2 h -1 c 0,1.656854 -1.343146,3 -3,3 -1.656854,0 -3,-1.343146 -3,-3 z M 4,6 v 9 H 15 V 6 Z m 13,2 v 4 h 3 V 8 Z m -1,11 c 0.552285,0 1,-0.447715 1,-1 0,-0.552285 -0.447715,-1 -1,-1 -0.552285,0 -1,0.447715 -1,1 0,0.552285 0.447715,1 1,1 z m -9,0 c 0.5522847,0 1,-0.447715 1,-1 0,-0.552285 -0.4477153,-1 -1,-1 -0.5522848,0 -1,0.447715 -1,1 0,0.552285 0.4477152,1 1,1 z"
+         id="Shape" />
+    </g>
+  </g>
+</svg>
