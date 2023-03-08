@@ -7,6 +7,10 @@
   --secondary-light-color: #FDF0D5;
 }
 
+html {
+  line-height: normal;
+}
+
 h1,h2,h3,h4,h5,h6 {
   margin-top:0;
 }
@@ -87,6 +91,16 @@ h1,h2,h3,h4,h5,h6 {
   color: var(--grey);
 }
 
+.list-info {
+  padding-top: 12px;
+  color: var(--grey);
+}
+
+.line-info {
+  display: flex;
+  justify-content: space-between;
+}
+
 .list-icons {
   padding: 12px 0;
   display: flex;
@@ -121,6 +135,11 @@ h1,h2,h3,h4,h5,h6 {
 .price-type {
   font-size: 16px;
   color: var(--grey);
+}
+
+.payments {
+  font-size: 14px;
+  margin-top: 4px;
 }
 
 .valve {

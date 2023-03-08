@@ -4,7 +4,12 @@
       <h1>{{@station.name}}</h1>
       <a class="list-address" target="_blank noopener noreferrer" href="{{coordinate-url @station.coor}}">{{@station.address}}</a>
     </div>
-    <p class="list-info"><span class="price">{{@station.price}}</span> <span class="price-type">€/kg</span><br>{{@station.payments}}
+    <p class="list-info">
+    <div class="line-info">
+      <div><span class="price">{{@station.price}}</span><span class="price-type"> €/kg</span></div>
+      {{#if @station.distance}}<div><span class="price">{{@station.distance}}</span><span class="price-type"> km</span></div>{{/if}}
+    </div>
+    <p class="payments">{{@station.payments}}</p>
     {{#if @station.news}}<p class="list-news">{{@station.news}}</p>{{/if}}
     {{#if @station.statusMessage}}<p class="exception-message">{{@station.statusMessage}}</p>{{/if}}
     </p>

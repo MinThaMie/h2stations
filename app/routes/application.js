@@ -9,7 +9,7 @@ export default class ApplicationRoute extends Route {
       const response = await fetch(ENV.APP.API_URL);
       const stations = await response.json();
       const parsedStations = stations.map((station) => {
-        const price = station.price_message?.match(/\d+.\d+/g)[0] || '-';
+        const price = station.price_message?.match(/\d+.\d+/g)?.[0]?.replace('.', ',') || '-';
         const address = `${station.street || ''} ${station.streetnr || ''}, ${
           station.city || ''
         }`;
