@@ -1,3 +1,4 @@
+/* eslint-disable */
 const fetch = require('node-fetch');
 
 const ALL_STATIONS_API_ENDPOINT =

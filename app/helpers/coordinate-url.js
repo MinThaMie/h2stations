@@ -1,8 +1,9 @@
 import { helper } from '@ember/component/helper';
+import window from 'ember-window-mock';
 
 export default helper(function coordinateURL([coor]) {
   if (coor) {
-    if (/Android|midori/i.test(navigator.userAgent)) {
+    if (/Android|midori/i.test(window.navigator.userAgent)) {
       return `geo:${coor}`;
     } else {
       // false for not mobile device

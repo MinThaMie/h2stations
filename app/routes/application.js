@@ -9,7 +9,7 @@ export default class ApplicationRoute extends Route {
       const response = await fetch(ENV.APP.API_URL);
       const stations = await response.json();
       const parsedStations = stations.map((station) => {
-        const price = station.price_message?.match(/\d+.\d+/g)?.[0]?.replace('.', ',') || '-';
+        const [valuta, price] = station.price_message?.split(' ') || '';
         const address = `${station.street || ''} ${station.streetnr || ''}, ${
           station.city || ''
         }`;
@@ -18,7 +18,7 @@ export default class ApplicationRoute extends Route {
         const has_350_large = 't' === station.has_350_large;
         const has_350_small = 't' === station.has_350_small;
         const payments =
-          station.paymenttypes.map((type) => type.descr).join(', ') || '-';
+          station.paymenttypes.map((type) => type.descr).join(', ') || '';
         const errorState700 = station.status700 == 'EXCEPTION';
         const errorState350s = station.status350s == 'EXCEPTION';
         const errorState350l = station.status350l == 'EXCEPTION';
@@ -31,6 +31,7 @@ export default class ApplicationRoute extends Route {
         const country = countries[station.countryshortname];
         return {
           name: station.name,
+          valuta: valuta,
           price: price,
           address: address,
           countryshortname: station.countryshortname,
@@ -67,7 +68,8 @@ export default class ApplicationRoute extends Route {
       });
       return groups;
     } catch (error) {
-      console.errr(error);
+      console.error(error);
+      return { NL: [], Europe: {} };
     }
   }
 }

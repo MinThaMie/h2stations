@@ -23,6 +23,14 @@ h1,h2,h3,h4,h5,h6 {
   padding: 20px;
   background-color: var(--primary-color);
   color: white;
+  align-items: center;
+  display: flex;
+  font-size: 26px;
+}
+
+#app > header > img {
+  margin-right: 12px;
+  height: 40px;
 }
 
 #app > nav {

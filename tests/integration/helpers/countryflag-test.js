@@ -6,10 +6,15 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Helper | countryflag', function (hooks) {
   setupRenderingTest(hooks);
 
-  // TODO: Replace this with your real tests.
-  test('it renders', async function (assert) {
+  test('it renders the German flag', async function (assert) {
     await render(hbs`{{countryflag 'DE'}}`);
 
     assert.dom(this.element).hasText('🇩🇪');
+  });
+
+  test('it renders empty when provided with an invalid country', async function (assert) {
+    await render(hbs`{{countryflag 'D'}}`);
+
+    assert.dom(this.element).hasText('');
   });
 });
