@@ -72,7 +72,7 @@ h1,h2,h3,h4,h5,h6 {
   padding: 0;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 .station-card {
   list-style: none;

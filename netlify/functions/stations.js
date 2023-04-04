@@ -70,7 +70,6 @@ exports.handler = async (event, context) => {
         combinedData.push(completeStation);
       }
     });
-    combinedData.sort((a, b) => (a.city > b.city ? 1 : -1));
     return {
       statusCode: 200,
       body: JSON.stringify(combinedData),
