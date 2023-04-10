@@ -1,22 +1,18 @@
 {{page-title "Europe"}}
-<div class="country-filter">
+<div local-class="country-filter">
   {{#each this.stationsByCountry as |item| }}
     {{#if (and item.selected this.countries.length)}}
-      <button type="button" class="choice-chip selected" {{on 'click' (fn this.removeCountry item.shortcode)}}>{{item.country}}</button>
+      <button type="button" local-class="choice-chip selected" {{on 'click' (fn this.removeCountry item.shortcode)}}>{{item.country}}</button>
     {{else}}
-      <button type="button" class="choice-chip" {{on 'click' (fn this.selectCountry item.shortcode)}}>{{item.country}}</button>
+      <button type="button" local-class="choice-chip" {{on 'click' (fn this.selectCountry item.shortcode)}}>{{item.country}}</button>
     {{/if}}
   {{/each}}
 </div>
 {{#each this.stationsByCountry as |item|}}
-{{#if item.selected}}
-  <div class="country">
-    <h2>{{item.country}} {{countryflag item.shortcode}}</h2>
-    <ul class="station-list">
-      {{#each item.stations as |st | }}
-      <Listitem @station={{st}}/>
-      {{/each}}
-    </ul>
-  </div>
-{{/if}}
+  {{#if item.selected}}
+    <div local-class="country">
+      <h2>{{item.country}} {{countryflag item.shortcode}}</h2>
+      <Stationlist @stations={{item.stations}} />
+    </div>
+  {{/if}}
 {{/each}}

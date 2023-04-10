@@ -22,6 +22,8 @@ export default class ApplicationRoute extends Route {
         const has_700_small = 't' === station.has_700_small;
         const has_350_large = 't' === station.has_350_large;
         const has_350_small = 't' === station.has_350_small;
+        const has_350_slow = 't' === station.has_350_slow;
+        const has_700_slow = 't' === station.has_700_slow;
         const payments =
           station.paymenttypes?.map((type) => type.descr).join(', ') || '';
         const errorState700 = station.status700 == 'EXCEPTION';
@@ -57,6 +59,8 @@ export default class ApplicationRoute extends Route {
           has_700_small: has_700_small,
           has_350_large: has_350_large,
           has_350_small: has_350_small,
+          has_350_slow: has_350_slow,
+          has_700_slow: has_700_slow,
           payments: payments,
         };
       });

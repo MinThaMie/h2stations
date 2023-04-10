@@ -1,0 +1,110 @@
+.station-card {
+  list-style: none;
+  border-radius: 16px;
+  border: 2px solid var(--primary-light-color);
+  display: grid;
+  grid-template-columns: 1fr 84px;
+  grid-column-gap: 8px;
+  overflow: hidden;
+}
+
+.content {
+  padding: 24px 0 12px 24px;
+}
+
+.header > h1 {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.address {
+  display: block; /* makes the anchor better clickable */
+  color: var(--primary-color);
+  color: var(--grey);
+}
+
+.info {
+  padding-top: 12px;
+  color: var(--grey);
+}
+
+.line-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons {
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  /* background-color: var(--primary-light-color); */
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.closed {
+  text-orientation: upright;
+  writing-mode: tb;
+  font-weight: bold;
+  font-size: 28px;
+  letter-spacing: -0.1em;
+  background-color: var(--secondary-color);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.exception-message {
+  border-left: 4px var(--secondary-color) solid;
+  padding: 4px 4px 4px 8px;
+  background-color: var(--secondary-light-color);
+  border-radius: 4px;
+  word-break: break-word;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.price-type {
+  font-size: 16px;
+  color: var(--grey);
+}
+
+.payments {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.valve {
+  height: 32px;
+  filter: brightness(0) saturate(100%) invert(14%) sepia(66%) saturate(3549%) hue-rotate(202deg) brightness(95%) contrast(97%);
+}
+
+.icon-container {
+  background-color: var(--primary-light-color);
+  width: 60px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.icon-badge {
+  background-color: white;
+  color: var(--primary-color);
+  padding: 0px 6px;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.icon-badge.slow {
+  padding: 0px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}

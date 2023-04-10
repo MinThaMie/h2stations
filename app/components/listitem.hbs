@@ -1,25 +1,27 @@
-<li ...attributes class="station-card">
-  <div class="list-content">
-    <div class="list-header">
+<li ...attributes local-class="station-card">
+  <div local-class="content">
+    <div local-class="header">
       <h1>{{@station.name}}</h1>
-      <a class="list-address" target="_blank noopener noreferrer" href="{{coordinate-url @station.coor}}">{{@station.address}}</a>
+      <a local-class="address" target="_blank noopener noreferrer" href="{{coordinate-url @station.coor}}">{{@station.address}}</a>
     </div>
-    <p class="list-info">
-    <div class="line-info">
-      {{#if @station.price}}<div><span class="price">{{@station.price}}</span><span class="price-type"> {{@station.valuta}}/kg</span></div>{{/if}}
-      {{#if @station.distance}}<div><span class="price">{{@station.distance}}</span><span class="price-type"> km</span></div>{{/if}}
+    <p local-class="info">
+    <div local-class="line-info">
+      {{#if @station.price}}<div><span local-class="price">{{@station.price}}</span><span local-class="price-type"> {{@station.valuta}}/kg</span></div>{{/if}}
+      {{#if @station.distance}}<div><span local-class="price">{{@station.distance}}</span><span local-class="price-type"> km</span></div>{{/if}}
     </div>
-    {{#if @station.payments}}<p class="payments">{{@station.payments}}</p>{{/if}}
-    {{#if @station.news}}<p class="list-news">{{@station.news}}</p>{{/if}}
-    {{#if @station.statusMessage}}<p class="exception-message">{{@station.statusMessage}}</p>{{/if}}
+    {{#if @station.payments}}<p local-class="payments">{{@station.payments}}</p>{{/if}}
+    {{#if @station.news}}<p local-class="news">{{@station.news}}</p>{{/if}}
+    {{#if @station.statusMessage}}<p local-class="exception-message">{{@station.statusMessage}}</p>{{/if}}
     </p>
   </div>
-  <div class="list-icons">
+  <div local-class="icons">
     {{#if this.isOpen}}
-      {{#if this.available350l}}<div data-test-350l class="icon-container"><img class="valve" src="images/truck_3.svg" alt="truck"/></div>{{/if}}
-      {{#if this.available350s}}<div data-test-350s class="icon-container"><img class="valve icon-image" src="images/car_3.svg" alt="car with 350 inside" /><span class="icon-badge">350</span></div>{{/if}}
-      {{#if this.available700}}<div data-test-700 class="icon-container"><img class="valve icon-image" src="images/car_3.svg" alt="car with 700 inside" /><span class="icon-badge">700</span></div>{{/if}}
+      {{#if this.available350l}}<div data-test-350l local-class="icon-container"><img local-class="valve" src="images/truck_3.svg" alt="truck"/></div>{{/if}}
+      {{#if this.available350s}}<div data-test-350s local-class="icon-container"><img local-class="valve" src="images/car_3.svg" alt="car with 350 inside" /><span local-class="icon-badge">350</span></div>{{/if}}
+      {{#if this.available700}}<div data-test-700 local-class="icon-container"><img local-class="valve" src="images/car_3.svg" alt="car with 700 inside" /><span local-class="icon-badge">700</span></div>{{/if}}
+      {{#if @station.has_350_slow}}<div data-test-350 local-class="icon-container"><span local-class="icon-badge slow">350 slow</span></div>{{/if}}
+      {{#if @station.has_700_slow}}<div data-test-350 local-class="icon-container"><span local-class="icon-badge slow">700 slow</span></div>{{/if}}
     {{/if}}
-    {{#if this.isClosed}}<p data-test-closed class="closed">CLOSED</p>{{/if}}
+    {{#if this.isClosed}}<p data-test-closed local-class="closed">CLOSED</p>{{/if}}
   </div>
 </li>

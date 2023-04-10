@@ -1,0 +1,47 @@
+header {
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  align-items: center;
+  display: flex;
+  font-size: 26px;
+}
+
+header > img {
+  margin-right: 12px;
+  height: 40px;
+}
+
+nav {
+  margin-top: 20px;
+  padding: 0 20px;
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+
+.main-menu > a {
+  padding: 8px;
+  text-decoration: none;
+  color: var(--grey);
+  border-bottom: 4px solid transparent;
+}
+
+.main-menu > a:global(.active) {
+  color: var(--primary-color);
+  border-bottom: 4px solid var(--primary-color);
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.underline {
+  color: white;
+}

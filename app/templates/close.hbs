@@ -1,11 +1,8 @@
 {{page-title "Close to Me"}}
 {{#if (and this.triedLocation (not this.userLocation))}}
-  <p class="exception-message">Your location could not be loaded, so this page cannot show the stations that are closest to you.</p>
-  <button type="button" class="choice-chip" {{on 'click' this.getUserLocation}}>Try again</button>
+  <p local-class="exception-message">Your location could not be loaded, so this page cannot show the stations that are closest to you.</p>
+  <button type="button" local-class="button" {{on 'click' this.getUserLocation}}>Try again</button>
 {{else}}
-<ul class="station-list">
-{{#each this.stationsByDistance as |station| }}
-  <Listitem @station={{station}}/>
-{{/each}}
-</ul>
+<h4 local-class="header">The shown distance is path of flight</h4>
+<Stationlist @stations={{this.stationsByDistance}} />
 {{/if}}

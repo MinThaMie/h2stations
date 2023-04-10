@@ -1,6 +1,2 @@
 {{page-title "Nederland"}}
-  <ul class="station-list">
-  {{#each @model as |st | }}
-  <Listitem @station={{st}}/>
-  {{/each}}
-</ul>
+<Stationlist @stations={{@model}} />
