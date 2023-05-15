@@ -42,7 +42,7 @@ exports.handler = async (event, context) => {
         if (s350l && s350l.combinedstatus !== 'PLANNED') {
           completeStation['status350l'] = s350l.combinedstatus;
           completeStation['status350lmessage'] = s350l.combinedremark;
-          completeStation['price_message'] = s350l.price_message;
+          completeStation['price_message'] = completeStation.price_message ?? s350l.price_message;
           shouldbeShown = true;
         }
       }
@@ -51,7 +51,7 @@ exports.handler = async (event, context) => {
         if (s700 && s700.combinedstatus !== 'PLANNED') {
           completeStation['status700'] = s700.combinedstatus;
           completeStation['status700message'] = s700.combinedremark;
-          completeStation['price_message'] = s700.price_message;
+          completeStation['price_message'] = completeStation.price_message ?? s700.price_message;
           shouldbeShown = true;
         }
       }
@@ -62,7 +62,7 @@ exports.handler = async (event, context) => {
         if (s350s && s350s.combinedstatus !== 'PLANNED') {
           completeStation['status350s'] = s350s.combinedstatus;
           completeStation['status350smessage'] = s350s.combinedremark;
-          completeStation['price_message'] = s350s.price_message;
+          completeStation['price_message'] = completeStation.price_message ??  s350s.price_message;
           shouldbeShown = true;
         }
       }
