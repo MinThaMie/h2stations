@@ -59,10 +59,10 @@ export const manualStations = [
     has_700_small: 'f',
     has_350_small: 'f',
     has_350_large: 'f',
-    has_350_slow: 't',
-    has_700_slow: 't',
-    statusMessage:
-      'Slowfiller : <4kg/h, the car should be uncoupled before 22:00',
+    has_350_slow: 'f',
+    has_700_slow: 'f',
+    //statusMessage: 'Slowfiller : <4kg/h, the car should be uncoupled before 22:00',
+    statusMessage: 'Out of service, waiting for technician',
     paymenttypes: [{descr: 'Debit Card'}, {descr: 'Credit Card'}, {descr: 'TANXpas'}],
   },
 ];
