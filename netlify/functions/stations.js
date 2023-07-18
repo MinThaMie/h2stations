@@ -49,7 +49,7 @@ exports.handler = async (event, context) => {
         let shouldbeShown = false;
         if (station.has_350_large == 't') {
           const s350l = status350Large.fuelstation.find(
-            (s) => s.name == station.name
+            (s) => s.idx == station.idx
           );
           if (s350l && s350l.combinedstatus !== 'PLANNED') {
             completeStation['status350l'] = s350l.combinedstatus;
@@ -59,7 +59,7 @@ exports.handler = async (event, context) => {
           }
         }
         if (station.has_700_small == 't') {
-          const s700 = status700.fuelstation.find((s) => s.name == station.name);
+          const s700 = status700.fuelstation.find((s) => s.idx == station.idx);
           if (s700 && s700.combinedstatus !== 'PLANNED') {
             completeStation['status700'] = s700.combinedstatus;
             completeStation['status700message'] = s700.combinedremark;
@@ -69,7 +69,7 @@ exports.handler = async (event, context) => {
         }
         if (station.has_350_small == 't') {
           const s350s = status350Small.fuelstation.find(
-            (s) => s.name == station.name
+            (s) => s.idx == station.idx
           );
           if (s350s && s350s.combinedstatus !== 'PLANNED') {
             completeStation['status350s'] = s350s.combinedstatus;
