@@ -1,17 +1,17 @@
 /* eslint-disable */
 const fetch = require('node-fetch');
 
-const ALL_700_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/masterlist?fuel_type=P700_SMALL&language=de&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22';
+const ALL_700_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/masterlist?fuel_type=P700_SMALL&language=en&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22';
 
-const ALL_350_SMALL_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/masterlist?fuel_type=P350_SMALL&language=de&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22';
+const ALL_350_SMALL_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/masterlist?fuel_type=P350_SMALL&language=en&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22';
 
-const ALL_350_LARGE_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/masterlist?fuel_type=P350_LARGE&language=de&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22';
+const ALL_350_LARGE_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/masterlist?fuel_type=P350_LARGE&language=en&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22';
 
-const STATUS_700_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/statuslist?fuel_type=P700_SMALL&language=de&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22'
+const STATUS_700_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/statuslist?fuel_type=P700_SMALL&language=en&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22'
 
-const STATUS_350_SMALL_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/statuslist?fuel_type=P350_SMALL&language=de&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22'
+const STATUS_350_SMALL_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/statuslist?fuel_type=P350_SMALL&language=en&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22'
 
-const STATUS_350_LARGE_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/statuslist?fuel_type=P350_LARGE&language=de&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22'
+const STATUS_350_LARGE_API_ENDPOINT = 'https://fuelstations.h2-api.live/v1/fuelstation/statuslist?fuel_type=P350_LARGE&language=en&__show_permclosed__=1&__t__=b13831e6243b9bcd4c74aeda55c1fe22'
 
 exports.handler = async (event, context) => {
   try {
