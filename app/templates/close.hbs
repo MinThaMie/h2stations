@@ -3,6 +3,6 @@
   <p local-class="exception-message">Your location could not be loaded, so this page cannot show the stations that are closest to you.</p>
   <button type="button" local-class="button" {{on 'click' this.getUserLocation}}>Try again</button>
 {{else}}
-<h4 local-class="header">The shown distance is path of flight</h4>
+<h4 local-class="header">The shown distance is as the crow flies</h4>
 <Stationlist @stations={{this.stationsByDistance}} />
 {{/if}}
