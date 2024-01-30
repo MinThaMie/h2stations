@@ -1,10 +1,8 @@
 export const manualStations = [
   {
     name: 'Vissers Energy',
-    price: '17,95*',
-    valuta: 'EUR',
-    news: '* This information has been entered manually and may differ',
-    news: 'Opening hours Ma t/m Fri 06:00-22:00, Sat 07:00-22:00, Sun 07:00-22:00',
+    price_message: '17,95 EUR/kg*',
+    news: 'Opening hours Ma t/m Fri 06:00-22:00, Sat 07:00-22:00, Sun 07:00-22:00. The price information has been entered manually and may differ',
     street: 'Stationsstraat',
     streetnr: '90',
     city: 'Horst',
